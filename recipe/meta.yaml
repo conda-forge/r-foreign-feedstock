@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/foreign_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/foreign/foreign_{{ version }}.tar.gz
-  sha256: ad87b6e9705a81045f0ff0baf8399441bab8001ab0f03ca1f4abc6e6afa899d5
+  sha256: ea797e171bdd5e80e31e40a7a1e93662a11c1a32934233f349165dff4b401f48
 
 build:
   number: 0
