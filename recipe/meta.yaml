@@ -1,5 +1,4 @@
-{% set version = "0.8-71" %}
-
+{% set version = '0.8-71' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,43 +9,52 @@ package:
 source:
   fn: foreign_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/foreign_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/foreign/foreign_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/foreign_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/foreign/foreign_{{ version }}.tar.gz
   sha256: 3bd2392fbcd9dd4f385ac1418a5e454b9769e6414a21fbb5ae1e7ce6072760d7
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 2
   skip: true  # [win32]
-
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - posix                # [win]
-    - {{ compiler('c') }}        # [unix]
-    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ compiler('c') }}        # [not win]
+    - {{native}}toolchain        # [win]
+    - {{posix}}filesystem        # [win]
+    - {{posix}}make
+    - {{posix}}sed               # [win]
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
   host:
     - r-base
-
   run:
     - r-base
+    - {{native}}gcc-libs         # [win]
 
 test:
   commands:
-    - $R -e "library('foreign')"  # [not win]
+    - $R -e "library('foreign')"           # [not win]
     - "\"%R%\" -e \"library('foreign')\""  # [win]
 
 about:
   home: https://CRAN.R-project.org/package=foreign
   license: GPL (>= 2)
-  summary: Functions for reading and writing data stored by some versions of Epi Info, Minitab,
-    S, SAS, SPSS, Stata, Systat and Weka and for reading and writing some dBase files.
+  summary: Reading and writing data stored by some versions of 'Epi Info', 'Minitab', 'S', 'SAS',
+    'SPSS', 'Stata', 'Systat', 'Weka', and for reading and writing some 'dBase' files.
   license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
 
 extra:
   recipe-maintainers:
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
+    - dbast
