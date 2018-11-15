@@ -47,8 +47,7 @@ about:
   summary: Reading and writing data stored by some versions of 'Epi Info', 'Minitab', 'S', 'SAS',
     'SPSS', 'Stata', 'Systat', 'Weka', and for reading and writing some 'dBase' files.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
-  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:
