@@ -42,7 +42,7 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=foreign
-  license: GPL-2
+  license: GPL-2.0-or-later
   summary: Reading and writing data stored by some versions of 'Epi Info', 'Minitab', 'S', 'SAS', 'SPSS', 'Stata', 'Systat', 'Weka', and for reading and writing some 'dBase' files.
   license_family: GPL2
   license_file:
