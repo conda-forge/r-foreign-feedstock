@@ -1,4 +1,4 @@
-{% set version = "0.8-80" %}
+{% set version = "0.8-81" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/foreign_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/foreign/foreign_{{ version }}.tar.gz
-  sha256: 57ababbb691df6bcd14c4d917e69871eb4a85a84cafb766bd755b964f1884d72
+  sha256: 1ae8f9f18f2a037697fa1a9060417ff255c71764f0145080b2bd23ba8262992c
 
 build:
   merge_build_host: true  # [win]
@@ -42,7 +42,7 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=foreign
-  license: GPL-2
+  license: GPL-2.0-or-later
   summary: Reading and writing data stored by some versions of 'Epi Info', 'Minitab', 'S', 'SAS', 'SPSS', 'Stata', 'Systat', 'Weka', and for reading and writing some 'dBase' files.
   license_family: GPL2
   license_file:
