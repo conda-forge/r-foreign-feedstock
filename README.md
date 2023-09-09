@@ -3,6 +3,7 @@ About r-foreign-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-foreign-feedstock/blob/main/LICENSE.txt)
 
+
 About r-foreign
 ---------------
 
@@ -11,6 +12,7 @@ Home: https://CRAN.R-project.org/package=foreign
 Package license: GPL-2.0-or-later
 
 Summary: Reading and writing data stored by some versions of 'Epi Info', 'Minitab', 'S', 'SAS', 'SPSS', 'Stata', 'Systat', 'Weka', and for reading and writing some 'dBase' files.
+
 About r-foreign
 ---------------
 
